@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private bool PlayerEnter;
     [SerializeField] private BurgerCannon burgerCannon;
     private bool enemyAlive = true;
-    private int speed = 3; 
+    [SerializeField] private int speed = 3; 
     public void Die()
     {
         enemyAlive = false;

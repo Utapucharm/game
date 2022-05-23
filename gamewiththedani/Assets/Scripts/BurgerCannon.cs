@@ -10,19 +10,20 @@ public class BurgerCannon : MonoBehaviour
 
     public void Fire()
     {
-        GameObject newBurger = Instantiate(burger, burgerStartPosition.position, burgerStartPosition.rotation);
-        Rigidbody burgerRigidbody = newBurger.GetComponent<Rigidbody>();
-        burgerRigidbody.AddForce(burgerStartPosition.TransformDirection(shootForce) * burgerRigidbody.mass);
+        Fire(null);
     }
 
     public void Fire(Transform target)
     {
         GameObject newBurger = Instantiate(burger, burgerStartPosition.position, burgerStartPosition.rotation);
         Rigidbody burgerRigidbody = newBurger.GetComponent<Rigidbody>();
+        burgerRigidbody.mass = 1000;
 
-        newBurger.transform.LookAt(target);
-
-
+        if (target != null)
+        { 
+            newBurger.transform.LookAt(target);
+        }
+       
         burgerRigidbody.AddForce(newBurger.transform.TransformDirection(shootForce) * burgerRigidbody.mass);
     }
 }
