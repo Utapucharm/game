@@ -18359,6 +18359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 33413874}
   burgerCannon: {fileID: 561257191}
+  speed: 3
 --- !u!135 &1680371269
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23588,6 +23589,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.652
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.71544945
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0093573695
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.026339091
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6981051
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 2.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 1470408400704257009, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 88.56
+      objectReference: {fileID: 0}
     - target: {fileID: 8525642849464899313, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
       propertyPath: m_Name
       value: Player
