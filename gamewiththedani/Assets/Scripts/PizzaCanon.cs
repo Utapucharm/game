@@ -7,6 +7,7 @@ using UnityEngine;
 public class PizzaCanon : MonoBehaviour
 {
     [SerializeField] private GameObject[] ingredients;
+    [SerializeField] private Vector3 shootForce;
 
     // Start is called before the first frame update
     private void Start()
@@ -18,14 +19,18 @@ public class PizzaCanon : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        transform.Rotate(transform.TransformDirection(0,0 , 69 * Time.deltaTime));
     }
     private void Fire()
     {
         int randomIngredient = Random.Range(0, ingredients.Length);
-        Instantiate(ingredients[randomIngredient], transform.position, transform.rotation);
+        GameObject pizzaThing = Instantiate(ingredients[randomIngredient], transform.position, transform.rotation);
+        Rigidbody pizzawrb = pizzaThing.AddComponent<Rigidbody>();
+        pizzawrb.AddForce(transform.TransformDirection(shootForce) * pizzawrb.mass);
+        pizzaThing.AddComponent<SphereCollider>();
 
     }
+
 
 }
 
