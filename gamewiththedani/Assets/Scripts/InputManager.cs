@@ -15,13 +15,12 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            weaponType = WeaponType.PizzaCannon;
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
             weaponType = WeaponType.BurgerCannon;
+            print(weaponType);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weaponType = WeaponType.PizzaCannon;
         }
 
         if (Input.GetButtonDown("Jump"))
@@ -40,12 +39,12 @@ public class InputManager : MonoBehaviour
             {
                 burgerCannon.Fire();
             }
-        else if (weaponType == WeaponType.PizzaCannon)
+            else if (weaponType == WeaponType.PizzaCannon)
             {
                 pizzaCannon.Fire();
             }
-
         }
+
 
         if (Input.GetKeyDown(KeyCode.R))
         {
