@@ -7,10 +7,23 @@ public class InputManager : MonoBehaviour
     [SerializeField] PlayerLook playerLook;
     [SerializeField] WallRun wallRun;
     [SerializeField] BurgerCannon burgerCannon;
+    [SerializeField] PizzaCannon pizzaCannon;
+    [SerializeField] WeaponType weaponType = WeaponType.BurgerCannon;
 
     // Update is called once per frame
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weaponType = WeaponType.PizzaCannon;
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weaponType = WeaponType.BurgerCannon;
+        }
+
         if (Input.GetButtonDown("Jump"))
         {
             player.Jump();
@@ -23,7 +36,15 @@ public class InputManager : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            burgerCannon.Fire();
+            if (weaponType == WeaponType.BurgerCannon)
+            {
+                burgerCannon.Fire();
+            }
+        else if (weaponType == WeaponType.PizzaCannon)
+            {
+                pizzaCannon.Fire();
+            }
+
         }
 
         if (Input.GetKeyDown(KeyCode.R))
