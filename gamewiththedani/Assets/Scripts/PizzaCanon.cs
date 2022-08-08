@@ -8,18 +8,19 @@ public class PizzaCanon : MonoBehaviour
 {
     [SerializeField] private GameObject[] ingredients;
     [SerializeField] private Vector3 shootForce;
+    [SerializeField] private Vector3 rotationSpeed;
 
     // Start is called before the first frame update
     private void Start()
     {
-        InvokeRepeating("Fire", 0, 0.2f);
-        
+        InvokeRepeating("Fire", 0, 0.2f);  
     }
 
     // Update is called once per frame
     private void Update()
     {
-        transform.Rotate(transform.TransformDirection(0,0 , 69 * Time.deltaTime));
+        transform.Rotate(rotationSpeed * Time.deltaTime, Space.Self);
+        //transform.Roit
     }
     private void Fire()
     {
