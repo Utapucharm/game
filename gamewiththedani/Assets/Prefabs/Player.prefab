@@ -357,6 +357,7 @@ GameObject:
   - component: {fileID: 8525642850446056802}
   - component: {fileID: 8525642850446056828}
   - component: {fileID: 8525642850446056829}
+  - component: {fileID: 751672870689893292}
   m_Layer: 6
   m_Name: Model
   m_TagString: Player
@@ -497,6 +498,19 @@ MonoBehaviour:
   wallRunfovTime: 10
   camTilt: 10
   camTiltTime: 10
+--- !u!114 &751672870689893292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525642850446056800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1983ef2ad9ad7174e8e86121d6dfcb4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shibu: {fileID: 2387698693850720501, guid: 856828ca90983485395539faeda02b92, type: 3}
 --- !u!1001 &3530110919282762156
 PrefabInstance:
   m_ObjectHideFlags: 0
