@@ -29,11 +29,7 @@ public class Enemy : MonoBehaviour
         if (PlayerEnter && enemyAlive)
         {
             ChasePlayer();
-            
         }
-
-
-
     }
 
     
@@ -54,10 +50,8 @@ public class Enemy : MonoBehaviour
             InvokeRepeating(nameof(Fire), 0.5f, 2);
            
         }
-       
-
-
-        }
+    }
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
