@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] WallRun wallRun;
     [SerializeField] BurgerCannon burgerCannon;
     [SerializeField] PizzaCannon pizzaCannon;
+    [SerializeField] InteractionManager interactionManager;
     [SerializeField] WeaponType weaponType = WeaponType.BurgerCannon;
 
     // Update is called once per frame
@@ -49,6 +50,11 @@ public class InputManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            interactionManager.Interact();
         }
 
 
