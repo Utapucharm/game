@@ -11,7 +11,6 @@ public class InteractionManager : MonoBehaviour
     [SerializeField] private Image crossHairGrab;
 
     private EditPhase editPhase = EditPhase.NotEdit;
-    private TransformType transformType = TransformType.None;
 
     private GameObject currentEditable;
     private GameObject currentPickupable;
@@ -138,15 +137,6 @@ public class InteractionManager : MonoBehaviour
     private void Update()
     {
         RaycastFromScreenCenter();
-
-        if (editPhase == EditPhase.Edit)
-        {
-            if (Input.GetKey(KeyCode.W))
-            {
-                print("ROTATE");
-                currentEditable.transform.Rotate(10 * Time.deltaTime * Vector3.right);
-            }
-        }
     }
 }
 
@@ -155,12 +145,4 @@ public enum EditPhase
 {
     NotEdit, 
     Edit
-}
-
-public enum TransformType
-{
-    None,
-    Move,
-    Rotate,
-    Scale
 }
