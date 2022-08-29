@@ -23960,6 +23960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 24739869926358205, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.85
+      objectReference: {fileID: 0}
     - target: {fileID: 751672870689893292, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
       propertyPath: crossHair
       value: 
@@ -24088,9 +24092,5 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.066
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 8419287533953693094, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
-    - {fileID: 645758043508647317, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
-    - {fileID: 6773235396119558929, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
-    - {fileID: 7462781699433154196, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5798caa6ae54f4e749b635cde5931204, type: 3}
