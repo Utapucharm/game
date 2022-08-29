@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3506788889671785745}
-  - component: {fileID: 6299508140386576184}
-  - component: {fileID: 7854880941320002237}
-  - component: {fileID: 4911782642476422154}
-  - component: {fileID: 5921689647309180843}
-  - component: {fileID: 3691775797528719997}
+  - component: {fileID: 7558130572963278762}
+  - component: {fileID: 7443478419600579161}
+  - component: {fileID: 3399415241628154966}
+  - component: {fileID: 4508370026613785026}
+  - component: {fileID: 3554597419290412125}
   m_Layer: 0
-  m_Name: Shiba inu
+  m_Name: Shiba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &6299508140386576184
+--- !u!114 &7558130572963278762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2387698693850720501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0050a869a954b431c9d4ef2ea0d3ce63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupAble: {fileID: 2387698693850720501}
+  rotationOffset: {x: 90, y: 0, z: 0}
+--- !u!33 &7443478419600579161
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,7 +58,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2387698693850720501}
   m_Mesh: {fileID: -1279945545099553595, guid: f074e48bb98de4ede89a10e83d75c2eb, type: 3}
---- !u!23 &7854880941320002237
+--- !u!23 &3399415241628154966
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -86,7 +100,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &4911782642476422154
+--- !u!54 &4508370026613785026
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,19 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5921689647309180843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2387698693850720501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0050a869a954b431c9d4ef2ea0d3ce63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &3691775797528719997
+--- !u!65 &3554597419290412125
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

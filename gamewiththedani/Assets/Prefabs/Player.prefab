@@ -23,8 +23,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287948551484164441}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1.5}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -543,7 +543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shibu: {fileID: 2387698693850720501, guid: 856828ca90983485395539faeda02b92, type: 3}
-  shibuspawn: {fileID: 24739869926358205}
+  pickUpPos: {fileID: 24739869926358205}
   crossHairDefault: {fileID: 0}
   crossHairGrab: {fileID: 0}
 --- !u!1001 &3935960920902575512

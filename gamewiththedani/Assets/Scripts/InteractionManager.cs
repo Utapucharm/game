@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class InteractionManager : MonoBehaviour
 {
     [SerializeField] private GameObject shibu;
-    [SerializeField] private Transform shibuspawn;
+    [SerializeField] private Transform pickUpPos;
 
     [Header("UI")]
     [SerializeField] private Image crossHairDefault;
@@ -12,8 +12,8 @@ public class InteractionManager : MonoBehaviour
 
     private EditPhase editPhase = EditPhase.NotEdit;
 
-    private GameObject currentEditable;
-    private GameObject currentPickupable;
+    private Pickupable currentEditable;
+    private Pickupable currentPickupable;
 
     public void Interact()
     {
@@ -24,13 +24,14 @@ public class InteractionManager : MonoBehaviour
             if (currentPickupable == null)
             {
                 // Create a new object
-                currentEditable = Instantiate(shibu);
-                Pickup(currentEditable, disableCollider: true);
+                currentEditable = Instantiate(shibu).GetComponentInChildren<Pickupable>();
+                print(currentEditable);
+                PickUp(currentEditable, disableCollider: true);
             }
             else
             {
                 currentEditable = currentPickupable;
-                Pickup(currentEditable, disableCollider: true);
+                PickUp(currentEditable, disableCollider: true);
             }
         }
         else if (editPhase == EditPhase.Edit)
@@ -42,57 +43,15 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    private void Pickup(GameObject objectToPickup, bool disableCollider)
+    private void PickUp(Pickupable objectToPickup, bool disableCollider)
     {
-        objectToPickup.transform.position = shibuspawn.position;
-        objectToPickup.transform.rotation = shibuspawn.rotation;
-        objectToPickup.transform.parent = shibuspawn;
-
-        if (objectToPickup.TryGetComponent(out Rigidbody rigidbody))
-        {
-            rigidbody.isKinematic = true;
-        }
-
-        if(disableCollider && objectToPickup.TryGetComponent(out Collider collider))
-        {
-            collider.isTrigger = true;
-        }
-
-        if (objectToPickup.TryGetComponent(out MeshRenderer meshRenderer))
-        {
-            ChangeAlpha(meshRenderer, 0.2f);
-        }
+        objectToPickup.PickUp(pickUpPos, disableCollider);
     }
 
-    private void Drop(GameObject objectToDrop)
+    private void Drop(Pickupable objectToDrop)
     {
-        objectToDrop.transform.parent = null;
-        
-        if (objectToDrop.TryGetComponent(out Rigidbody rigidbody))
-        {
-            rigidbody.isKinematic = false;
-        }
-
-        if (objectToDrop.TryGetComponent(out Collider collider))
-        {
-            collider.isTrigger = false;
-        }
-
-        if (objectToDrop.TryGetComponent(out MeshRenderer meshRenderer))
-        {
-            ChangeAlpha(meshRenderer, 1f);
-        }
+        objectToDrop.Drop();
     }
-
-    // TODO Daniel: Had a problem with transparent materials. Look into it.
-    private void ChangeAlpha(MeshRenderer meshRenderer, float newAlpha)
-    {
-        Color currentColor = meshRenderer.material.color;
-        Color newColor = new Color(currentColor.r, currentColor.g, currentColor.b, newAlpha);
-
-        meshRenderer.material.color = newColor;
-    }
-
 
     private void RaycastFromScreenCenter()
     {
@@ -111,9 +70,9 @@ public class InteractionManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit, rayLength))
             {
                 //crossHair.color = Color.red;
-                if (hit.collider.TryGetComponent<Pickupable>(out var pickupable))
+                if (hit.collider.TryGetComponent<Pickupable>(out var pickupable) && editPhase == EditPhase.NotEdit)
                 {
-                    currentPickupable = hit.collider.gameObject;
+                    currentPickupable = pickupable;
                     crossHairDefault.enabled = false;
                     crossHairGrab.enabled = true;
                 }
