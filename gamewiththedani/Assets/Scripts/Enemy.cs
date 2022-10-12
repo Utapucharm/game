@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
         enemyAlive = false;
         CancelInvoke(nameof(Fire));
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-
+        
     }
 
 
