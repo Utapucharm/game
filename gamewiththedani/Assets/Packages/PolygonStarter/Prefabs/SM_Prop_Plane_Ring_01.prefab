@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4045920869679372}
-  - component: {fileID: 8459417006464320966}
+  - component: {fileID: 3598996543412140413}
   - component: {fileID: 64912645600813642}
   m_Layer: 0
   m_Name: SM_Prop_Plane_Ring_01
@@ -28,13 +28,12 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8998576387848200757}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8459417006464320966
+--- !u!114 &3598996543412140413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,10 +42,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897184382633502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd4af20e550824f329409fb9d02064fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 4058038593635564b874ab6fb901f38c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speedDirection: {x: 0, y: 0, z: 20}
 --- !u!64 &64912645600813642
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -72,7 +71,6 @@ GameObject:
   - component: {fileID: 8998576387848200757}
   - component: {fileID: 3571014084829321744}
   - component: {fileID: 2517757328916881035}
-  - component: {fileID: 6141254226817636590}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -90,7 +88,6 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4045920869679372}
   m_RootOrder: 0
@@ -114,7 +111,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -145,16 +141,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6141254226817636590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4140856161367622287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd4af20e550824f329409fb9d02064fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.2

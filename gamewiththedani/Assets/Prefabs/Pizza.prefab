@@ -106,3 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45019589584ff3e41819384d372f5a17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ingredients: []
+  shootForce: {x: 0, y: 0, z: 0}
+  rotationSpeed: {x: 0, y: 0, z: 0}
