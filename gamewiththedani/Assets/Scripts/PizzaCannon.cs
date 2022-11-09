@@ -15,11 +15,17 @@ public class PizzaCannon : MonoBehaviour
 
     public void Fire()
     {
-        int randomIngredient = Random.Range(0, ingredients.Length);
-        GameObject pizzaThing = Instantiate(ingredients[randomIngredient], transform.position, transform.rotation);
-        Rigidbody pizzawrb = pizzaThing.AddComponent<Rigidbody>();
+       
+        for (int i = 0; i < 8; i++)
+        {
+           int randomIngredient = Random.Range(0, ingredients.Length);
+            GameObject pizzaThing = Instantiate(ingredients[randomIngredient], transform.position, transform.rotation);
+         Rigidbody pizzawrb = pizzaThing.AddComponent<Rigidbody>();
         pizzawrb.AddForce(transform.TransformDirection(shootForce) * pizzawrb.mass);
         pizzaThing.AddComponent<SphereCollider>();
+         
+        }
+       
 
     }
 
