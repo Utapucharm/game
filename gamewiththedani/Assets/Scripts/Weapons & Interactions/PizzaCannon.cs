@@ -6,7 +6,6 @@ public class PizzaCannon : MonoBehaviour
     [SerializeField] private Vector3 shootForce;
     [SerializeField] private Vector3 rotationSpeed;
 
-    // Update is called once per frame
     private void Update()
     {
         transform.Rotate(rotationSpeed * Time.deltaTime, Space.Self);
@@ -20,16 +19,12 @@ public class PizzaCannon : MonoBehaviour
         {
            int randomIngredient = Random.Range(0, ingredients.Length);
             GameObject pizzaThing = Instantiate(ingredients[randomIngredient], transform.position, transform.rotation);
-         Rigidbody pizzawrb = pizzaThing.AddComponent<Rigidbody>();
-        pizzawrb.AddForce(transform.TransformDirection(shootForce) * pizzawrb.mass);
-        pizzaThing.AddComponent<SphereCollider>();
-         
+            Rigidbody pizzawrb = pizzaThing.AddComponent<Rigidbody>();
+            pizzawrb.AddForce(transform.TransformDirection(shootForce) * pizzawrb.mass);
+            pizzaThing.AddComponent<SphereCollider>();
         }
-       
 
     }
-
-
 }
 
 
