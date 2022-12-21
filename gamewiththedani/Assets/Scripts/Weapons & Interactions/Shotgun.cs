@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shotgun : MonoBehaviour
+public class Shotgun : MonoBehaviour, IFirable
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private Transform shootPoint;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BurgerCannon : MonoBehaviour
+public class BurgerCannon : MonoBehaviour, IFirable
 {
     [SerializeField] private GameObject burger;
     [SerializeField] private Transform burgerStartPosition;
