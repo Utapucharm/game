@@ -6,22 +6,20 @@ public class BurgerCannon : MonoBehaviour
     [SerializeField] private Transform burgerStartPosition;
     [SerializeField] private Vector3 shootForce;
 
-    public void Fire()
+    public void Update()
     {
-        Fire(null);
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Fire();
+        }
     }
 
-    public void Fire(Transform target)
+    public void Fire()
     {
         GameObject newBurger = Instantiate(burger, burgerStartPosition.position, burgerStartPosition.rotation);
         Rigidbody burgerRigidbody = newBurger.GetComponent<Rigidbody>();
         burgerRigidbody.mass = 1000;
 
-        if (target != null)
-        { 
-            newBurger.transform.LookAt(target);
-        }
-       
         burgerRigidbody.AddForce(newBurger.transform.TransformDirection(shootForce) * burgerRigidbody.mass);
     }
 }
