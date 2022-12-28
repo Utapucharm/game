@@ -16,16 +16,14 @@ public class Shotgun : MonoBehaviour, IFirable
 
     public void Fire()
     {
-
         for (int i = 0; i < 5; i++)
         {
             Vector3 offset = CoolMath.CalculateCirclePoint(0.69f, 360/5*i); 
-            GameObject newBurger = Instantiate(projectile, shootPoint.position + transform.TransformDirection(offset), shootPoint.rotation);
-            Rigidbody burgerRigidbody = newBurger.GetComponent<Rigidbody>();
+            GameObject currentProjectile = Instantiate(projectile, shootPoint.position + transform.TransformDirection(offset), shootPoint.rotation);
+            Rigidbody burgerRigidbody = currentProjectile.GetComponent<Rigidbody>();
             burgerRigidbody.mass = 1000;
-
        
-            burgerRigidbody.AddForce(newBurger.transform.TransformDirection(shootForce) * burgerRigidbody.mass);
+            burgerRigidbody.AddForce(currentProjectile.transform.TransformDirection(shootForce) * burgerRigidbody.mass);
         }
     }
 }
