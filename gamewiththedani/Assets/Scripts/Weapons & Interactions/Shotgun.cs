@@ -13,15 +13,15 @@ public class Shotgun : MonoBehaviour, IFirable
     {
         for (int i = 0; i < popcornNumber; i++)
         {
-            Vector3 offset = CoolMath.CalculateCirclePoint(0.69f, 360/popcornNumber*i); 
+            Vector3 offset = CoolMath.CalculateCirclePoint(0.1f, 360/popcornNumber*i); 
             GameObject currentProjectile = Instantiate(projectile, shootPoint.position + transform.TransformDirection(offset), shootPoint.rotation);
             Rigidbody burgerRigidbody = currentProjectile.GetComponent<Rigidbody>();
             burgerRigidbody.mass = 1000;
             
-            Vector3 direction = offset - shootPoint.position;
+            Vector3 direction = offset - shootPoint.localPosition;
             direction = direction.normalized;
             
-            burgerRigidbody.AddForce((shootPoint.transform.TransformDirection(shootForce)+ direction * spreadPopcorn) * burgerRigidbody.mass);
+            burgerRigidbody.AddForce(shootPoint.transform.TransformDirection(shootForce + direction * spreadPopcorn) * burgerRigidbody.mass);
         }
     }
 }
