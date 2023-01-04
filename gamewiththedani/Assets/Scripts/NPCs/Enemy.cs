@@ -1,32 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    private bool PlayerEnter;
     [SerializeField] private BurgerCannon burgerCannon;
-    private bool enemyAlive = true;
-    [SerializeField] private int speed = 3; 
+    [SerializeField] private int speed = 3;
+    private bool isAlive = true;
+    private bool playerIsClose;
+
     public void Die()
     {
-        enemyAlive = false;
+        isAlive = false;
         CancelInvoke(nameof(Fire));
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-        
-    }
-
-
-    void Start()
-    {
-
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (PlayerEnter && enemyAlive)
+        if (playerIsClose && isAlive)
         {
             ChasePlayer();
         }
@@ -34,8 +26,7 @@ public class Enemy : MonoBehaviour
 
     
     private void ChasePlayer()
-    {
-        
+    {    
         Vector3 lookDirection = new Vector3(player.position.x, transform.position.y, player.position.z);
         transform.LookAt(lookDirection);
         GetComponent<Rigidbody>().velocity = transform.TransformDirection(Vector3.forward)*speed;
@@ -43,12 +34,10 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")&& enemyAlive) 
+        if (other.gameObject.CompareTag("Player")&& isAlive) 
         {
-            
-            PlayerEnter = true;
-            InvokeRepeating(nameof(Fire), 0.5f, 2);
-           
+            playerIsClose = true;
+            InvokeRepeating(nameof(Fire), 0.5f, 2);  
         }
     }
     
@@ -56,23 +45,15 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            PlayerEnter = false;
+            playerIsClose = false;
             CancelInvoke(nameof(Fire));
         }
     }
+
     private void Fire()
     {
         burgerCannon.Fire();
     }
-
-   
-
-
-
-
-
-
-
 
 }
 
